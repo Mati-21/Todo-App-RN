@@ -1,17 +1,20 @@
+import { useTheme } from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import React from "react";
 import { StyleSheet } from "react-native";
 
 export default function TabsLayout() {
+  const { isDarkMode, toggleDarkMode, colors } = useTheme();
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "green",
-        tabBarInactiveTintColor: "grey",
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textMuted,
         tabBarStyle: {
-          backgroundColor: "#1e293b",
+          backgroundColor: colors.surface,
+          borderTopColor: colors.border,
           paddingTop: 10,
           paddingBottom: 60,
           height: 100,
