@@ -15,7 +15,6 @@ const TodoInput = () => {
   const addTodo = useMutation(api.todo.addTodo);
 
   const handleAddTodo = async () => {
-    console.log("jjoojoojoo");
     if (newTodo) {
       try {
         await addTodo({ text: newTodo.trim() });
